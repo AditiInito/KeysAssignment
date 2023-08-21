@@ -1,24 +1,11 @@
-# README
+/usr/local/etc/supervisord.conf
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[program:my_rake_task]
+command=bash -l -c "/Users/inito/.rvm/gems/ruby-2.7.2@keys-gemset/bin/rake keys:update"
+directory=/Users/inito/Documents/rails/rails6/keys_assignment
+user=inito
+autostart=true
+autorestart=true
+stdout_logfile=/Users/inito/Documents/rails/rails6/keys_assignment/log/my_rake_task_stdout.log
+stderr_logfile=/Users/inito/Documents/rails/rails6/keys_assignment/log/my_rake_task_stderr.log
