@@ -32,11 +32,13 @@ class KeysController < ApplicationController
     def keys_called_at
         @key.update_key_called_at
         redirect_to keys_path
+        flash[:notice]="Unblocked key #{@key.key}"
     end
 
     def keys_revived_at
         @key.update_key_revived_at
         redirect_to keys_path
+        flash[:notice]="Revived key #{@key.key}"
     end
 
     def destroy
